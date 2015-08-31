@@ -27,6 +27,14 @@ public class PessoaFisica extends Pessoa{
 		this.sexo = sexo;
 	}
 	
+	
+	//Metodo ToString()
+	@Override
+	public String toString() {
+		return "PessoaFisica [cpf=" + cpf + ", email=" + email + ", dataNascimento=" + dataNascimento + ", sexo=" + sexo
+				+ ", toString()=" + super.toString() + "]";
+	}
+
 	public String getCpf() {
 		return cpf;
 	}
