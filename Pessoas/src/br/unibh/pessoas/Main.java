@@ -1,5 +1,7 @@
 package br.unibh.pessoas;
 
+import br.unibh.pessoas.entidades.Pessoa;
+
 public class Main {
 
 	public static void main(String args[]) {

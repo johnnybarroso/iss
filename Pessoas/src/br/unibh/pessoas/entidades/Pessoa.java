@@ -1,4 +1,4 @@
-package br.unibh.pessoas;
+package br.unibh.pessoas.entidades;
 
 public class Pessoa {
 	// Variaveis de instancia
