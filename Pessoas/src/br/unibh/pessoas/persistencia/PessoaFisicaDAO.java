@@ -37,7 +37,7 @@ public class PessoaFisicaDAO implements DAO<PessoaFisica, Long>{
 			ResultSet res = JDBCUtil.getConnection().prepareStatement(
 					  "select * from tb_pessoa_fisica").executeQuery();
 			while (res.next()){
-				System.out.println(res.getString("nome"));
+				System.out.println(res.getString("nome")+" - "+res.getString("email"));
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
