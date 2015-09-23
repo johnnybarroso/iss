@@ -50,9 +50,5 @@ public class PessoaJuridica extends Pessoa{
 	public void setSite(String site) {
 		this.site = site;
 	}
-	
-	
-	
-	
 
 }
