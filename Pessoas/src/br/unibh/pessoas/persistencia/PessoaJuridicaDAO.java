@@ -4,7 +4,7 @@ import java.util.List;
 
 import br.unibh.pessoas.entidades.PessoaFisica;
 
-public class PessoaJuridicaDAO implements DAO<PessoaFisica, Long>{
+public class PessoaJuridicaDAO implements DAO<PessoaFisica, Long> {
 
 	@Override
 	public PessoaFisica find(Long id) {
@@ -15,19 +15,19 @@ public class PessoaJuridicaDAO implements DAO<PessoaFisica, Long>{
 	@Override
 	public void insert(PessoaFisica t) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void update(PessoaFisica t) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void delete(PessoaFisica t) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
