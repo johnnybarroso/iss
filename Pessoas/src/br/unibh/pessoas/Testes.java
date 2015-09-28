@@ -56,6 +56,18 @@ public class Testes {
 		Assert.assertNotNull(pf3);
 		dao.delete(pf3);
 	}
+	@Test
+	public void testePessoaFisicaDeletar()
+	{
+		PessoaFisicaDAO dao = new PessoaFisicaDAO();
+		PessoaFisica pf = new PessoaFisica(null, "Johnny Eugênio", "Rua B", "3134914896", "54789632514",
+				"ciclano@tiberwar.com", new Date(), "M");
+		dao.insert(pf);
+		PessoaFisica pf2 = dao.find("Johnny Eugênio");
+		dao.delete(pf2);
+		PessoaFisica pf3 = dao.find("Johnny Eugênio");
+		Assert.assertNull(pf3);
+	}
 
 	// PESSOA JURIDICA
 	@Test
@@ -104,5 +116,17 @@ public class Testes {
 		Assert.assertEquals(pj3.getEndereco(), "Rua Tabajaras Futebol");
 		Assert.assertNotNull(pj3);
 		dao.delete(pj3);
+		
+	}
+	@Test
+	public void testePessoaJuridicaDeletar(){
+		PessoaJuridicaDAO dao = new PessoaJuridicaDAO();
+		PessoaJuridica pj = new PessoaJuridica(null, "Tibera War", "Rua Eugenio Costa", 
+				"3134912321", "12345921233212", new Date(), "www.tiberawar.xo.cz");
+		dao.insert(pj);
+		PessoaJuridica pj2 = dao.find("Tibera War");
+		dao.delete(pj2);
+		PessoaJuridica pj3 = dao.find("Tibera War");
+		Assert.assertNull(pj3);
 	}
 }
