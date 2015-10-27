@@ -9,20 +9,22 @@ import br.unibh.servicospessoas.entidades.CEP;
 
 public class CEPDAO implements DAO<CEP, Long>{
 
-	public List<CEP> findCep(String endereco){
+	public List<CEP> findEndereco(String Endereco) {
 		List<CEP> lista = new ArrayList<CEP>();
-		try {
-			ResultSet res = JDBCUtil.getConnection().prepareStatement(
-					  "select * from tb_cep").executeQuery();
-			while (res.next()){
-				lista.add(new CEP(
-						res.getLong("cep"),
-						res.getString("endereco"),
-						res.getString("cidade")
-						)
-					);
-				//System.out.println(res.getString("nome")+" - "+res.getString("email"));
-			}
+			try {
+				PreparedStatement p = (PreparedStatement) JDBCUtil.getConnection().prepareStatement(
+						  "select * from tb_cep "
+						+ "where endereco like ?");
+				p.setString(1, "%"+Endereco+"%");
+				ResultSet res = p.executeQuery();
+				while (res.next()){
+					lista.add(new CEP(
+							res.getLong("cep"),
+							res.getString("endereco"),
+							res.getString("cidade")
+							)
+						);
+				}
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();

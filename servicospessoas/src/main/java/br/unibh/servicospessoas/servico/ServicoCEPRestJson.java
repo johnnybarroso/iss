@@ -30,10 +30,10 @@ public class ServicoCEPRestJson {
     
     @GET 
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("/listar2")
+    @Path("/listar2/{endereco}")
     public List<CEP> listar(@PathParam("endereco") String endereco){
     	CEPDAO dao = new CEPDAO();
-    	return dao.findCep(endereco);
+    	return dao.findEndereco(endereco);
     }
     
     @GET
@@ -51,7 +51,6 @@ public class ServicoCEPRestJson {
     public CEP salvar(CEP p){
     	CEPDAO dao = new CEPDAO();
     	dao.insert(p);
-    	dao.update(p);
     	return dao.findCep(p.getCep());
     }
     @PUT
